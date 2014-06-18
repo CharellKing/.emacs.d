@@ -1,0 +1,17 @@
+rm -rf elpa
+rm -rf irony-mode/build/*
+rm -rf irony-mode/bin
+rm -rf *Warnings*
+rm -rf tramp
+rm -rf templates
+rm -rf snippets
+rm -rf projectile-bookmarks.eld
+rm -rf projectile.cache
+rm -rf ac-comphist.dat
+rm -rf auto-save-list
+rm -rf %backup%~
+rm -rf \.\#\*
+rm -rf \#\*
+rm -rf .emacs.desktop
+rm -rf .emacs.lock
+rm -rf eshell

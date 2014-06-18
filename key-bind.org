@@ -1,0 +1,10 @@
+* key-bind
+** custom
+*** foder
+    /c-+ (fold)/
+
+    /c-- (unfold)/
+
+*** full screen
+    /f11 - (full screen or not)/
+

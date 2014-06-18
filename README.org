@@ -1,0 +1,9 @@
+插件
+color-theme
+linum
+
+session
+ido
+smex
+
+cscope
