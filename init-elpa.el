@@ -9,28 +9,49 @@
 
 (require 'cl)
 (defvar packages-list
-  '(font-lock+
-    auto-complete
-    yasnippet
-    auto-complete-c-headers
-    flymake-google-cpplint
-    google-c-style
+  '(
+    ;;base
+    highlight-current-line
+    font-lock+
     color-theme
     session
     smex
     powerline
     autoinsert
     highlight-parentheses
-    xcscope
-    flymake-shell
-    graphviz-dot-mode
-    projectile
+    fill-column-indicator
+    autopair
+    goto-chg
+
+    ;;autocomplete
+    auto-complete
+    yasnippet
+
+    ;;C/C++
+    auto-complete-c-headers
+    flymake-google-cpplint
+    google-c-style
     cpputils-cmake
     cmake-mode
+
+    ;;dot
+    graphviz-dot-mode
+
+    ;;org
     org2blog
-    magit
-    fill-column-indicator
+
+    ;;evernote
     evernote-mode
+
+    ;;project
+    xcscope
+    flymake-shell
+    projectile
+    magit
+    flymake-cursor
+    flycheck
+
+
     ;;python
     deferred
     jedi
@@ -39,13 +60,10 @@
     python-pylint
     python-pep8
     ipython
-    flycheck
-    pydoc-info
 
-    autopair
-    goto-chg
-    flymake-cursor
-    highlight-current-line))
+    ;;latex
+    auctex
+    ))
 
 (defun has-package-not-installed ()
   (loop for p in packages-list

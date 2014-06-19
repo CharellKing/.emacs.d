@@ -15,3 +15,4 @@ rm -rf \#\*
 rm -rf .emacs.desktop
 rm -rf .emacs.lock
 rm -rf eshell
+rm -rf *.el~

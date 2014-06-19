@@ -4,13 +4,16 @@
    *reference*
    http://www.jesshamrick.com/2012/09/18/emacs-as-a-python-ide/
 *** ipython
+
     *outer tools*
+
     ipython
     #+begin_src
 sudo pip install ipython
     #+end_src
 
     *package*
+
     python-mode
 
     *configure*
@@ -66,3 +69,42 @@ sudo pip install jedi virtualenv virtualenvwrapper
     *setting*
     M-x jedi:install-server
 *** pylint and pep8
+
+** latex
+   *outer tools*
+
+   texlive
+   latex-cjk-all ;;for chinese support
+   auctex
+
+   *packages*
+
+   auctex
+
+   *configure*
+   #+begin_src emacs-lisp
+(require 'auctex)
+(require 'preview-latex)
+
+;;========================================
+;;latex custom
+;;=======================================
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
+
+;;chinese is more surported
+(setq Tex-engine 'xelatex)
+
+(add-hook 'LaTeX-mode-hook 'visual-line-mode)
+(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+(setq reftex-plug-into-AUCTeX t)
+
+;;========================================
+;;pdf-latex
+;;========================================
+(setq Tex-PDF-mode t)
+   #+end_src
