@@ -14,7 +14,7 @@
       '(("cnblog"
          :url "http://www.cnblogs.com/atskyline/services/metaweblog.aspx"
          :username "CharellkingQu"
-;;	 :password "T9gV*|7$8L`l>h^x"
+;;	 :password "xxxx"
 	 :keep-new-lines t
 	 :confirm t
 	 :wp-code nil
