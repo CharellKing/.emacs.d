@@ -169,7 +169,13 @@
 ;;===========================================
 ;;C-c !  use ipython
 ;;C-c |  send current buffer to ipython
-;;===========================================
 
+
+;;===========================================
+;;doxymacs
+;;===========================================
+;;C-c d f insert comments for function
+;;C-c d i insert comments for file
+;;C-c d ; insert comments for member
 
 (provide 'init-shortcut)
