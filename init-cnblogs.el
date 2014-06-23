@@ -22,15 +22,6 @@
 	)
 )
 
-;;(require 'netrc) ;; or nothing if already in the load-path
-;;(setq blog (netrc-machine (netrc-parse "~/.netrc") "myblog" t))
-;;(setq org2blog/wp-blog-alist
-;;      '(("my-blog"
-;;         :url "http://www.cnblogs.com/wind-qu/"
-;;         :username (netrc-get blog "CharellkingQu")
-;;         :password (netrc-get blog "T9gV*|7$8L`l>h^x"))))
-
-
 ;;===============================================================
 ;;博客模板
 ;;===============================================================
