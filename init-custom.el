@@ -291,5 +291,4 @@
 (add-hook 'temp-buffer-setup-hook 'split-horizontally-not-vertically)
 
 
-;;(color-theme-subtle-hacker)
 (provide 'init-custom)
