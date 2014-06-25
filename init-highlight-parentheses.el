@@ -1,6 +1,6 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp")
 (require 'highlight-parentheses)
 
-(highlight-parentheses-mode t)
+(add-hook 'c-mode-common-hook 'highlight-parentheses-mode)
 
 (provide 'init-highlight-parentheses)
