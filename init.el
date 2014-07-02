@@ -9,6 +9,7 @@
 
 (require 'init-cmake-mode)
 (require 'init-cmake-project)
+(require 'init-flymake)
 (require 'init-autocomplete)
 (require 'init-c)
 (require 'init-python)
@@ -29,3 +30,4 @@
 
 
 (require 'init-shortcut)
+(put 'set-goal-column 'disabled nil)
