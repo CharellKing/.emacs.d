@@ -7,8 +7,7 @@
 (require 'init-smex)
 (require 'init-autoinsert)
 
-(require 'init-cmake-mode)
-(require 'init-cmake-project)
+(require 'init-cmake)
 (require 'init-flymake)
 (require 'init-autocomplete)
 (require 'init-c)
