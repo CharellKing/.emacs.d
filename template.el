@@ -838,6 +838,9 @@ per-template definition section.  See `template-definition-start'."
     ("FILE" (insert (cadr template-file))) ; file name without directory
     ("FILE_SANS" (insert (nth 2 template-file)
 			 (nth 3 template-file)))
+    ("SUBFIX_FILE_SANS" (insert
+                         (replace-regexp-in-string "^[0-9]*-[0-9]*-[0-9]*-" ""
+                                                   (nth 2 template-file))))
     ("FILE_RAW" (insert (nth 2 template-file))) ; raw file name without number
     ("FILE_NUM" (insert (nth 3 template-file))) ; number
     ("FILE_UPCASE" (insert (upcase (nth 2 template-file))
@@ -851,6 +854,7 @@ per-template definition section.  See `template-definition-start'."
      ;; using saved `current-time-zone' doesn't work, but nil does
      (set-time-zone-rule nil))
     ("YEAR" (template-insert-time "%Y" "0000"))
+    ("SLASH_DATE" (template-insert-time "%Y/%m/%d"))
     ("ISO_DATE" (template-insert-time "%Y-%m-%d" "0000-00-00"))
     ("COMMENT" (template-read "Initial comment: ")) ; comment
     ("AUTHOR" (insert (or user-mail-address	; author
@@ -889,6 +893,7 @@ The default predefined expansion forms are --default is inserting--:
   (>>>DATE<<<)        date using `template-date-format': 11 Jan 1999
   (>>>TIME<<<)        time using `template-time-format': 11:58:49
   (>>>YEAR<<<)        the year: 1999
+  (>>>SLASH_DATE<<<)  ISO 8601 date: 1999/01/11
   (>>>ISO_DATE<<<)    ISO 8601 date: 1999-01-11
   (>>>VC_DATE<<<)     UTC date/time for vc: 1999/01/11 10:58:49
   (>>>COMMENT<<<)     ask user for initial comment
@@ -1155,7 +1160,7 @@ line on."
     (when (cdr syntax)
       (goto-char orig)
       (error "Command only works with comments terminated by end-of-line"))
-    
+
     (if (and (eq last-command 'template-block-comment-success)
 	     (looking-at "[ \t]*$"))
 	(template-insert-newline "" nil (1- (template-point-at-bol)))
@@ -2502,7 +2507,7 @@ For ARG, see `template-define-start'."
     (if (string= comment "")
 	(template-define-start arg "(%S %S)" register contents)
       (template-define-start arg "(%S %S %S)" register contents comment))))
-  
+
 
 ;;;===========================================================================
 ;;;  Initialization

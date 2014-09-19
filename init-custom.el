@@ -108,7 +108,7 @@
 ;;设置tab
 ;;=================================================
 (setq-default indent-tabs-mode nil)
-(setq default-tab-width 4)
+(setq default-tab-width 2)
 
 ;;=================================================
 ;;line
@@ -168,7 +168,7 @@
 ;;================================
 ;;设置fill-column
 ;;================================
-(setq default-fill-column 120)
+(setq default-fill-column 80)
 
 ;;================================
 ;;代码折叠

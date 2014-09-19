@@ -1,8 +1,8 @@
 ---
-title: (>>>FILE_SANS<<<)
+title: (>>>SUBFIX_FILE_SANS<<<)
 date: (>>>VC_DATE<<<) +0800
 layout: post
-permalink: /blog/(>>>YEAR<<<)/(>>>MONTH<<<)/(>>>DAY<<<) (>>>FILE_SANS<<<).html
+permalink: /blog/(>>>SLASH_DATE<<<) (>>>SUBFIX_FILE_SANS<<<).html
 categories:
   -
 tags:
@@ -11,3 +11,4 @@ tags:
 ---
 
 (>>>POINT<<<)
+>>>TEMPLATE-DEFINITION-SECTION<<<
