@@ -163,6 +163,10 @@
 (global-set-key (kbd "C-c g c") 'goto-last-change)
 (global-set-key (kbd "C-c g b") 'goto-last-change-reverse)
 
+;;==========================================
+;;new file by using template
+;;===========================================
+;;C-x t create file using template
 
 ;;===========================================
 ;;python
@@ -177,5 +181,26 @@
 ;;C-c d f insert comments for function
 ;;C-c d i insert comments for file
 ;;C-c d ; insert comments for member
+
+
+
+;;=============================================
+;;markdown
+;;=============================================
+;;C-c C-t n insert title (1~5)
+;;C-c C-t t insert title with underline style (1)
+;;C-c C-t s insert title
+;;C-c C-a l insert link [text](url)
+;;C-c C-i i insert picture ![text](url)
+;;C-c C-s b insert quote text
+;;C-c C-s c insert code
+;;C-c C-p b bold
+;;C-c C-p i itatic
+;;C-c -     insert the horizon line
+
+;;C-c C-c m run markdown in current buffer, preview in another buffer
+;;C-c C-c p preview in a browser
+;;C-c C-t s insert title
+
 
 (provide 'init-shortcut)

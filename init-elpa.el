@@ -63,6 +63,15 @@
 
     ;;latex
     auctex
+    cdlatex
+    auto-complete-auctex
+
+    ;;markdown
+    markdown-mode
+
+    ;;js
+    js2-mode
+
     ))
 
 (defun has-package-not-installed ()

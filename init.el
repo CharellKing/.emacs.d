@@ -19,7 +19,11 @@
 (require 'init-sh)
 (require 'init-graphviz-mode)
 (require 'init-w3m)
-
+(require 'init-latex)
+(require 'init-markdown)
+(require 'init-predictive)
+(require 'init-js)
+(require 'init-template)
 
 (require 'init-projectile)
 (require 'init-doxymacs)
@@ -30,3 +34,4 @@
 
 (require 'init-shortcut)
 (put 'set-goal-column 'disabled nil)
+(put 'upcase-region 'disabled nil)

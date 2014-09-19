@@ -1,15 +1,9 @@
-(require 'auctex)
-(require 'preview-latex)
+(load "auctex.el" nil t t)
+(require 'tex-mik)
 
-;;========================================
-;;latex custom
-;;=======================================
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
-(setq-default TeX-master nil)
-
-;;chinese is more surported
-(setq Tex-engine 'xelatex)
+(setq-default TeX-master t)
 
 (add-hook 'LaTeX-mode-hook 'visual-line-mode)
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
@@ -18,9 +12,11 @@
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
 (setq reftex-plug-into-AUCTeX t)
 
-;;========================================
-;;pdf-latex
-;;========================================
-(setq Tex-PDF-mode t)
+(setq TeX-PDF-mode t)
+(require 'tex)
+(TeX-global-PDF-mode t)
 
-(provice 'init-latex)
+
+(require 'auto-complete-auctex)
+
+(provide 'init-latex)

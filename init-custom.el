@@ -37,11 +37,11 @@
   ;;设置字体
   ;;============================================
   (set-face-attribute
-   'default nil :font "DejaVu Sans Mono 10")
+   'default nil :font "DejaVu Sans Mono 12")
   (dolist (character '(han kana symbol cjk-misc bopomofo))
     (set-fontset-font (frame-parameter nil 'font)
   		      character
-  		      (font-spec :family "WenQuanYi Bitmap Song" :size 10)))
+  		      (font-spec :family "WenQuanYi Bitmap Song" :size 16)))
 
  )
 
