@@ -1,4 +1,7 @@
-/* @(#)TEMPLATE.h.tpl
+/* COPYRIGHT:   Copyright (>>>YEAR<<<) CharellkingQu
+ * LICENSE:     GPL
+ * AUTHOR:      CharellkingQu
+ * DATE :       (>>>VC_DATE<<<)
  */
 
 #ifndef _(>>>FILE_UPCASE<<<)_H
@@ -6,5 +9,4 @@
 
 (>>>POINT<<<)
 
-#endif /* _(>>>FILE_UPCASE<<<)_H */
-
+#endif  // _(>>>FILE_UPCASE<<<)_H
