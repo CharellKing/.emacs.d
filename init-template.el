@@ -5,7 +5,7 @@
 ;;(setq template-subdirectories '("~/.emacs.d/templates"))
 (setq template-auto-insert t)
 (template-initialize)
-;; (add-to-list 'template-find-file-commands
-;;              'ido-exit-minibuffer)
+(add-to-list 'template-find-file-commands
+             'ido-exit-minibuffer)
 
 (provide 'init-template)
