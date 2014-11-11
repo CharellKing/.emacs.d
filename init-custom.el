@@ -99,10 +99,6 @@
   (global-unset-key k))
 
 
-;;=================================================
-;;自动换行
-;;=================================================
-(global-visual-line-mode t)
 
 ;;=================================================
 ;;设置tab
@@ -113,9 +109,10 @@
 ;;=================================================
 ;;line
 ;;=================================================
-(setq require-final-newline t)
-(setq truncate-lines t)
-(setq truncate-partial-width-windows t)
+(setq default-truncate-lines t)
+(setq truncate-partial-width-windows nil)
+(global-set-key (kbd "<f8>") 'toggle-truncate-lines)
+
 
 ;;================================================
 ;;text decoration
@@ -157,13 +154,6 @@
 ;;设置交互
 ;;================================
 (fset 'yes-or-no-p 'y-or-n-p)
-
-;;================================
-;;自动换行
-;;================================
-;;(setq default-truncate-lines nil)
-;;(global-visual-line-mode 1)
-(setq-default auto-fill-function 'do-auto-fill)
 
 ;;================================
 ;;设置fill-column
