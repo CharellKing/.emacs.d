@@ -849,7 +849,7 @@ per-template definition section.  See `template-definition-start'."
 		    (insert (substring (nth 4 template-file) 1))))
     ("DATE" (template-insert-time template-date-format))
     ("TIME" (template-insert-time template-time-format))
-    ("VC_DATE" (set-time-zone-rule "UTC")
+    ("VC_DATE" (set-time-zone-rule "GMT-8")
      (template-insert-time "%Y/%m/%d %T" "0000/00/00 00:00:00")
      ;; using saved `current-time-zone' doesn't work, but nil does
      (set-time-zone-rule nil))
