@@ -10,7 +10,7 @@
 (require 'init-cmake)
 (require 'init-flymake)
 (require 'init-autocomplete)
-(require 'init-c)
+;;(require 'init-c)
 (require 'init-python)
 
 (require 'init-xcscope)
