@@ -72,6 +72,8 @@
     ;;js
     js2-mode
 
+    ;;svn
+    dsvn
     ))
 
 (defun has-package-not-installed ()
