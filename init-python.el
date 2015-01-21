@@ -54,8 +54,10 @@
             (local-set-key (kbd "C-c p i") 'ipython)
         ))
 
-
-
+;;==============================================
+;;fold
+;;==============================================
+(add-hook 'python-mode-hook (lambda() (hs-minor-mode 1)))
 
 
 (provide 'init-python)
