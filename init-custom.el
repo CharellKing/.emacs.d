@@ -1,3 +1,4 @@
+
 (when (display-graphic-p)
   ;;==============================================
   ;;全屏设置
@@ -277,6 +278,11 @@
       (split-window-horizontally)))
 (add-hook 'temp-buffer-setup-hook 'split-horizontally-not-vertically)
 
+;;============================================
+;;markset
+;;============================================
+(global-unset-key [?\C- ])
+(define-key global-map [C-return] 'set-mark-command)
 
 ;;============================================
 ;;fold
