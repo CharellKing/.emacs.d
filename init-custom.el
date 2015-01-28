@@ -278,4 +278,10 @@
 (add-hook 'temp-buffer-setup-hook 'split-horizontally-not-vertically)
 
 
+;;============================================
+;;fold
+;;============================================
+
+
+
 (provide 'init-custom)

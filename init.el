@@ -31,7 +31,6 @@
 (require 'init-git)
 (require 'init-evernote)
 
-
 (require 'init-shortcut)
 (put 'set-goal-column 'disabled nil)
 (put 'upcase-region 'disabled nil)
