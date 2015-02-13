@@ -28,11 +28,19 @@
     yasnippet
 
     ;;C/C++
-    auto-complete-c-headers
-    flymake-google-cpplint
-    google-c-style
-    cpputils-cmake
-    cmake-mode
+    ;; auto-complete-c-headers
+    ;; flymake-google-cpplint
+    ;; google-c-style
+    ;; cpputils-cmake
+    ;; cmake-mode
+    ggtags
+    company
+    function-args
+    company-c-headers
+    clean-aindent-mode
+    dtrt-indent
+    ws-butler
+    smartparens
 
     ;;dot
     graphviz-dot-mode
@@ -75,6 +83,13 @@
     ;;svn
     dsvn
 
+    ;;protobuf
+    protobuf-mode
+
+    ;;theme
+    solarized-theme
+    zenburn-theme
+    molokai-theme
     ))
 
 (defun has-package-not-installed ()

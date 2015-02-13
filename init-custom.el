@@ -1,4 +1,3 @@
-
 (when (display-graphic-p)
   ;;==============================================
   ;;全屏设置
@@ -29,9 +28,9 @@
   ;;去掉工具栏，菜单栏，滚动条
   ;;=============================================
   (tool-bar-mode 0)
-  (menu-bar-mode 0)
   (scroll-bar-mode 0)
-
+  (setq frame-title-format "")
+  (setq-default mode-line-format nil)
 
 
   ;;============================================
@@ -41,10 +40,26 @@
    'default nil :font "DejaVu Sans Mono 12")
   (dolist (character '(han kana symbol cjk-misc bopomofo))
     (set-fontset-font (frame-parameter nil 'font)
-  		      character
-  		      (font-spec :family "WenQuanYi Bitmap Song" :size 16)))
+                      character
+                      (font-spec :family "WenQuanYi Bitmap Song" :size 16)))
+  )
 
- )
+(menu-bar-mode 0)
+
+(require 'color-theme)
+(color-theme-initialize)
+
+(defun my:color_theme ()
+  (if (display-graphic-p)
+      ;; (color-theme-calm-forest)
+    (load-theme 'molokai t)
+    (load-theme 'molokai t)
+    ;; (color-theme-hober)
+    ))
+
+(add-hook 'after-init-hook
+	    (my:color_theme))
+
 
 
 ;;===============================================
@@ -105,7 +120,8 @@
 ;;设置tab
 ;;=================================================
 (setq-default indent-tabs-mode nil)
-(setq default-tab-width 2)
+(setq default-tab-width 4)
+(setq tab-width 4)
 
 ;;=================================================
 ;;line
@@ -202,12 +218,6 @@
 
 (define-key global-map (kbd "C-c ;") 'iedit-mode)
 
-;;========================================
-;;color theme
-;;========================================
-(require 'color-theme)
-(color-theme-initialize)
-(color-theme-calm-forest)
 
 ;;========================================
 ;;powerline
@@ -245,12 +255,6 @@
 (require 'ido)
 (ido-mode t)
 
-;;==================================================
-;;auto-indent
-;;==================================================
-(setq-default indent-tabs-mode nil) ;;only use tab
-(setq-default tab-width 4)          ;; a tab for 4 spaces
-(setq tab-width 4)                  ;; current buffer tab for 4 spaces
 
 ;;=============================================
 ;;spell

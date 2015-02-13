@@ -1,61 +1,70 @@
-;;===========================================
-;;header auto-complete
-;;=========================================
-(defun my:ac-c-header-init()
-  (require 'auto-complete-c-headers)
-  (add-to-list 'ac-sources 'ac-source-c-headers)
-  (add-to-list 'achead:include-directories '(("/usr/include/c++/4.8")
-                                             ("/usr/include/i686-redhat-linux/c++/4.8.3")
-                                             ("/usr/include/c++/4.8.3/backward")
-                                             ("/usr/lib/gcc/i686-redhat-linux/4.8.3/include")
-                                             ("/usr/local/include")
-                                             ("/usr/lib/gcc/i686-redhat-linux/4.8.3/include-fixed")
-                                             ("/usr/include"))))
-(add-hook 'c++-mode-hook 'my:ac-c-header-init)
-(add-hook 'c-mode-hook 'my:ac-c-header-init)
+(require 'company)
+(require 'cedet)
+(require 'cc-mode)
+(require 'semantic)
+(require 'function-args)
+(require 'clean-aindent-mode)
+(require 'dtrt-indent)
+(require 'ws-butler)
+(require 'smartparens)
+(require 'smartparens-config)
 
-;;==========================================
-;;google cpplint
-;;==========================================
-(defun my:flymake-google-init()
-  (require 'flymake-google-cpplint)
-  (global-set-key (kbd "RET") 'newline-and-indent)
-  (custom-set-variables
-   '(flymake-google-cpplint-command "/usr/bin/cpplint"))
-  (flymake-google-cpplint-load))
-(add-hook 'c-mode-hook 'my:flymake-google-init)
-(add-hook 'c++-mode-hook 'my:flymake-google-init)
+(add-hook 'after-init-hook 'global-company-mode)
+
+(global-semanticdb-minor-mode 1)
+(global-semantic-idle-scheduler-mode 1)
+(semantic-mode 1)
+
+(fa-config-default)
+;; (define-key c-mode-map  [(contrl tab)] 'moo-complete)
+;; ;;(define-key c++-mode-map  [(control tab)] 'moo-complete)
+;; (define-key c-mode-map (kbd "M-o")  'fa-show)
+;; ;;(define-key c++-mode-map (kbd "M-o")  'fa-show)
+
+(add-to-list 'company-backends 'company-c-headers)
+
+(global-semantic-stickyfunc-mode 1)
+
+(global-set-key (kbd "RET") 'newline-and-indent)  ; automatically indent when press RET
+
+(add-hook 'pro-mode-hook 'clean-aindent-mode)
+
+(dtrt-indent-mode 1)
+
+(add-hook 'c-mode-common-hook 'ws-butler-mode)
+
+(show-smartparens-global-mode +1)
+(smartparens-global-mode 1)
+
+(sp-with-modes '(c-mode c++-mode)
+               (sp-local-pair "{" nil :post-handlers '(("||\n[i]" "RET")))
+               (sp-local-pair "/*" "*/" :post-handlers '((" | " "SPC")
+                                                         ("* ||\n[i]" "RET"))))
+
+(global-set-key (kbd "<f5>") (lambda ()
+                               (interactive)
+                               (setq-local compilation-read-command nil)
+                               (call-interactively 'compile)))
+
+(setq gdb-many-windows t
+      gdb-show-main t
+      )
 
 
-(require 'google-c-style)
-(add-hook 'c-mode-common-hook 'google-set-c-style)
-(add-hook 'c-mode-common-hook 'google-make-newline-indent)
+(defun my-c-mode-common-hook ()
+  ;; my customizations for all of c-mode, c++-mode, objc-mode, java-mode
+  (c-set-offset 'substatement-open 0)
+  ;; other customizations can go here
 
+  (setq c++-tab-always-indent t)
+  (setq c-basic-offset 4)                  ;; Default is 2
+  (setq c-indent-level 4)                  ;; Default is 2
 
-;;=========================================
-;;cedet
-;;=========================================
-;; (semantic-mode 1)
-;; (defun my:add-semantic-to-autocomplete()
-;;   (add-to-list 'ac-sources 'ac-source-semantic))
-;; (add-hook 'c-mode-common-hook 'my:add-semantic-to-autocomplete)
+  (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
+  (setq tab-width 4)
+  (setq indent-tabs-mode t)  ; use spaces only if nil
+  )
 
-;; (global-ede-mode 1)
-;; ;;(ede-cpp-root-project "TimePass" :include-path)
-;; (global-semantic-idle-scheduler-mode 1)
-
-;;==============================================
-;;clang
-;;==============================================
-(setenv "LD_LIBRARY_PATH" "/usr/lib/llvm")
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/irony-mode/elisp/"))
-(require 'irony)
-(irony-enable 'ac)
-(defun my:irony-enable()
-  (when (member major-mode irony-known-modes)
-    (irony-mode 1)))
-(add-hook 'c++-mode-hook 'my:irony-enable)
-(add-hook 'c-mode-hook 'my:irony-enable)
-
+(add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 
 (provide 'init-c)
