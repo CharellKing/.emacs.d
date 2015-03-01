@@ -122,6 +122,17 @@
 (setq-default indent-tabs-mode nil)
 (setq default-tab-width 4)
 (setq tab-width 4)
+(global-set-key (kbd "RET") 'newline-and-indent)
+
+;;=================================================
+;;auto indent in region
+;;=================================================
+(defun indent-buffer ()
+  (interactive)
+  (save-excursion
+    (indent-region (point-min) (point-max) nil)))
+(global-set-key [f12] 'indent-buffer)
+
 
 ;;=================================================
 ;;line

@@ -90,6 +90,9 @@
     solarized-theme
     zenburn-theme
     molokai-theme
+
+    ;;web
+    web-mode
     ))
 
 (defun has-package-not-installed ()

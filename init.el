@@ -29,6 +29,7 @@
 (require 'init-projectile)
 (require 'init-doxymacs)
 (require 'init-git)
+(require 'init-web)
 
 (require 'init-shortcut)
 
