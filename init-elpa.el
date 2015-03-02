@@ -22,6 +22,7 @@
     fill-column-indicator
     autopair
     goto-chg
+    paredit
 
     ;;autocomplete
     auto-complete
