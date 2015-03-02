@@ -14,6 +14,7 @@
 (require 'init-ggtags)
 (require 'init-python)
 (require 'init-protobuf)
+(require 'init-cl)
 
 (require 'init-xcscope)
 (require 'init-elisp)

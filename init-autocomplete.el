@@ -14,8 +14,10 @@
 ;;===========================================
 ;;brackets autopair
 ;;===========================================
-(require 'autopair)
-(autopair-global-mode)
+;; (require 'autopair)
+;; (autopair-global-mode)
 ;;(add-hook 'lisp-mode-hook #'(lambda () (setq autopair-dont-activate t)))
+(require 'electric)
+(electric-pair-mode t)
 
 (provide 'init-autocomplete)

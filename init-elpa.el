@@ -31,8 +31,8 @@
     ;; auto-complete-c-headers
     ;; flymake-google-cpplint
     ;; google-c-style
-    ;; cpputils-cmake
-    ;; cmake-mode
+    cpputils-cmake
+    cmake-mode
     ggtags
     company
     function-args
@@ -93,6 +93,9 @@
 
     ;;web
     web-mode
+
+    ;;lisp
+    slime
     ))
 
 (defun has-package-not-installed ()
