@@ -57,6 +57,7 @@
     ;; (color-theme-hober)
     ))
 
+
 (add-hook 'after-init-hook
 	    (my:color_theme))
 

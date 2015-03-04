@@ -14,24 +14,27 @@
 ;;===========================================
 ;;brackets autopair
 ;;===========================================
+(require 'highlight-parentheses)
 (require 'autopair)
 
-(defvar autopair-modes '(r-mode ruby-mode))
-(defun turn-on-autopair-mode() (autopair-mode 1))
-(dolist (mode autopair-modes)(add-hook (intern (concat(symbol-name mode) "-hook")) 'turn-on-autopair-mode))
+(add-hook 'highlight-parentheses-mode-hook
+          '(lambda ()
+             (setq autopair-handle-action-fns
+                   (append
+                    (if autopair-handle-action-fns
+                        autopair-handle-action-fns
+                      '(autopair-default-handle-action))
+                    '((lambda (action pair pos-before)
+                        (hl-paren-color-update)))))))
 
-(require 'paredit)
-(defadvice paredit-mode (around disable-autopairs-around (arg))
-  "Disable autopairs mode if paredit-mode is turned on"
-  ad-do-it
-  (if (null ad-return-value)
-      (autopair-mode 1)
-    (autopair-mode 0)
-    ))
+(global-highlight-parentheses-mode t)
 
-(ad-activate 'paredit-mode)
 
-;; (autopair-global-mode)
-;; (add-hook 'lisp-mode-hook #'(lambda () (setq autopair-dont-activate t)))
+(setq hl-paren-colors
+      '("red1" "orange1" "yellow1" "green1" "cyan1"
+        "slateblue1" "magenta1" "purple"))
+
+(paredit-mode t)
+(electric-pair-mode 1)
 
 (provide 'init-autocomplete)
