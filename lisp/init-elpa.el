@@ -88,6 +88,8 @@
     protobuf-mode
 
     ;;theme
+    color-theme-sanityinc-solarized
+    noctilux-theme
     solarized-theme
     zenburn-theme
     molokai-theme

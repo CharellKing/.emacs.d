@@ -51,14 +51,13 @@
 
 (defun my:color_theme ()
   (if (display-graphic-p)
-      ;; (color-theme-calm-forest)
-    (load-theme 'molokai t)
-    (load-theme 'molokai t)
-    ;; (color-theme-hober)
+      ;; (load-theme 'molokai t)
+      (color-theme-hober)
+    (color-theme-hober)
     ))
 
 
-(add-hook 'after-init-hook
+(add-hook 'after-make-frame-functions
 	    (my:color_theme))
 
 
