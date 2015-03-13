@@ -51,14 +51,14 @@
 
 (defun my:color_theme ()
   (if (display-graphic-p)
-      ;; (load-theme 'molokai t)
-      (color-theme-hober)
-    (color-theme-hober)
+      (color-theme-molokai)
+    (color-theme-molokai)
+    ;; (color-theme-hober)
     ))
 
-
-(add-hook 'after-make-frame-functions
-	    (my:color_theme))
+(my:color_theme)
+;; (add-hook 'after-make-frame-functions
+;; 	    (my:color_theme))
 
 
 
@@ -216,6 +216,7 @@
 (add-hook 'lisp-mode-hook       'hs-minor-mode)
 (add-hook 'perl-mode-hook       'hs-minor-mode)
 (add-hook 'sh-mode-hook         'hs-minor-mode)
+(add-hook 'python-mode-hook     'hs-minor-mode)
 
 ;;========================================
 ;;term tab problem

@@ -13,7 +13,6 @@
     ;;base
     highlight-current-line
     font-lock+
-    color-theme
     session
     smex
     powerline
@@ -50,16 +49,19 @@
     org2blog
 
     ;;evernote
-    evernote-mode
+    ;; evernote-mode
+    geeknote
 
     ;;project
-    xcscope
-    flymake-shell
     projectile
     magit
     flymake-cursor
     flycheck
 
+
+    ;;shell
+    flymake-shell
+    bash-completion
 
     ;;python
     deferred
@@ -84,15 +86,19 @@
     ;;svn
     dsvn
 
+    ;;json
+    json-mode
+
     ;;protobuf
     protobuf-mode
 
     ;;theme
-    color-theme-sanityinc-solarized
-    noctilux-theme
-    solarized-theme
-    zenburn-theme
-    molokai-theme
+    ;; color-theme-sanityinc-solarized
+    ;; noctilux-theme
+    ;; solarized-theme
+    ;; zenburn-theme
+    color-theme
+    color-theme-molokai
 
     ;;web
     web-mode
