@@ -115,6 +115,10 @@
   (global-unset-key k))
 
 
+;;=================================================
+;;undo
+;;=================================================
+(global-set-key (kbd "C-z") 'undo)
 
 ;;=================================================
 ;;设置tab
@@ -123,6 +127,12 @@
 (setq default-tab-width 4)
 (setq tab-width 4)
 (global-set-key (kbd "RET") 'newline-and-indent)
+
+(require 'highlight-indentation)
+(set-face-background 'highlight-indentation-face "light sky blue")
+(set-face-background 'highlight-indentation-current-column-face "medium aquamarine")
+(setq highlight-indentation-offset 4)
+
 
 ;;=================================================
 ;;auto indent in region
