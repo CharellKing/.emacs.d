@@ -39,6 +39,7 @@
     company-c-headers
     clean-aindent-mode
     dtrt-indent
+    highlight-indentation
     ws-butler
     smartparens
 

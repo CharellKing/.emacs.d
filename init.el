@@ -15,7 +15,7 @@
 (require 'init-protobuf)
 (require 'init-cl)
 
-(require 'init-xcscope)
+;;(require 'init-xcscope)
 (require 'init-elisp)
 (require 'init-lua-mode)
 (require 'init-sh)
