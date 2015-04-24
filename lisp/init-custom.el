@@ -241,7 +241,7 @@
 (define-key global-map (kbd "C-c ;") 'iedit-mode)
 
 
-(require 'unicad)
+;; (require 'unicad)
 
 ;;========================================
 ;;powerline
@@ -313,9 +313,9 @@
 (define-key global-map [C-return] 'set-mark-command)
 
 ;;============================================
-;;fold
+;;保存桌面
 ;;============================================
-
+(desktop-save-mode 1)
 
 
 (provide 'init-custom)
