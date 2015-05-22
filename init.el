@@ -23,13 +23,14 @@
 (require 'init-latex)
 (require 'init-markdown)
 (require 'init-predictive)
-(require 'init-js)
+;;(require 'init-js)
 (require 'init-template)
 
 (require 'init-projectile)
 (require 'init-doxymacs)
 (require 'init-git)
-(require 'init-web)
+;;(require 'init-web)
+(require 'init-multi-web)
 
 (require 'init-shortcut)
 

@@ -7,6 +7,7 @@
 ;; (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 ;; (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 
+
 (defun my-setup-php ()
   ;; enable web mode
   (web-mode)
@@ -22,7 +23,7 @@
   (setq web-mode-markup-indent-offset 2))
 
 (add-to-list 'auto-mode-alist '("\\.php$" . my-setup-php))
-
+(add-to-list 'auto-mode-alist '("\\.html$" . my-setup-php))
 ;; (setq web-mode-engines-alist '(("php" . "\\.phtml\\'") ("blade" . "\\.blade\\.")) )
 
 

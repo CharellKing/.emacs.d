@@ -103,6 +103,7 @@
 
     ;;web
     web-mode
+    multi-web-mode
 
     ;;lisp
     slime

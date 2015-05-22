@@ -241,7 +241,7 @@
 (define-key global-map (kbd "C-c ;") 'iedit-mode)
 
 
-(require 'unicad)
+;;(require 'unicad)
 
 ;;========================================
 ;;powerline
