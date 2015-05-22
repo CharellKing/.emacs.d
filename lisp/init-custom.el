@@ -185,8 +185,8 @@
 ;;字符集
 ;;=============================
 (prefer-coding-system 'utf-8)
-(setq coding-system-for-read 'utf-8)
-(setq coding-system-for-write 'utf-8)
+;; (setq coding-system-for-read 'utf-8)
+;;(setq coding-system-for-write 'utf-8)
 
 ;;================================
 ;;设置交互
@@ -241,7 +241,7 @@
 (define-key global-map (kbd "C-c ;") 'iedit-mode)
 
 
-;; (require 'unicad)
+(require 'unicad)
 
 ;;========================================
 ;;powerline
