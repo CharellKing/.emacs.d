@@ -2,18 +2,26 @@
   ;;==============================================
   ;;全屏设置
   ;;==============================================
-  (global-set-key [f11] 'my-fullscreen) ;; 启动全屏的快捷键
-  (defun my-fullscreen ()
+
+  ;;=============================================
+  ;;设置linux属性
+  ;;============================================
+  (defun my-linux-fullscreen ()
     (interactive)
     (x-send-client-message
      nil 0 nil "_NET_WM_STATE" 32
      '(2 "_NET_WM_STATE_FULLSCREEN" 0))
     )
 
-  ;;==============================================
-  ;;最大化
-  ;;==============================================
-  (defun my-maximized ()
+  (defun my-linux-font()
+    (set-face-attribute 'default nil :font "DejaVu Sans Mono 12")
+    (dolist (character '(han kana symbol cjk-misc bopomofo))
+      (set-fontset-font (frame-parameter nil 'font)
+			character
+			(font-spec :family "WenQuanYi Bitmap Song" :size 16)))
+    )
+
+  (defun my-linux-maximized ()
     (interactive)
     (x-send-client-message
      nil 0 nil "_NET_WM_STATE" 32
@@ -22,29 +30,31 @@
      nil 0 nil "_NET_WM_STATE" 32
      '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0))
     )
-  (my-maximized) ;; 启动emacs时窗口最大化
+
+  (cond ((memq system-type '(darwin))
+	       (progn
+	        (setq ns-auto-hide-menu-bar t)
+	        (set-frame-parameter nil 'fullscreen 'fullboth)))
+        ((memq system-type '(gnu/linux))
+	       (progn
+	        (my-linux-font)
+	        (my-maximized) ;;启动emacs时窗口最大化
+	        (global-set-key [f11] 'my-fullscreen))) ;; 启动全屏的快捷键
+  )
 
   ;;=============================================
   ;;去掉工具栏，菜单栏，滚动条
   ;;=============================================
-  (tool-bar-mode 0)
-  (scroll-bar-mode 0)
-  (setq frame-title-format "")
-  (setq-default mode-line-format nil)
+  (defun my-beatiful-ui()
+    (tool-bar-mode 0)
+    (scroll-bar-mode 0)
+    (menu-bar-mode 0)
+    (setq frame-title-format "")
+    (setq-default mode-line-format nil)
+    )
 
+  (my-beatiful-ui)
 
-  ;;============================================
-  ;;设置字体
-  ;;============================================
-  (set-face-attribute
-   'default nil :font "DejaVu Sans Mono 12")
-  (dolist (character '(han kana symbol cjk-misc bopomofo))
-    (set-fontset-font (frame-parameter nil 'font)
-                      character
-                      (font-spec :family "WenQuanYi Bitmap Song" :size 16)))
-  )
-
-(menu-bar-mode 0)
 
 (require 'color-theme)
 (color-theme-initialize)
@@ -60,7 +70,7 @@
 ;; (add-hook 'after-make-frame-functions
 ;; 	    (my:color_theme))
 
-
+)
 
 ;;===============================================
 ;;设置光标
@@ -185,6 +195,7 @@
 ;;字符集
 ;;=============================
 (prefer-coding-system 'utf-8)
+(setq default-buffer-file-coding-system 'utf-8)
 ;; (setq coding-system-for-read 'utf-8)
 ;;(setq coding-system-for-write 'utf-8)
 
@@ -196,7 +207,7 @@
 ;;================================
 ;;设置fill-column
 ;;================================
-(setq default-fill-column 80)
+(setq default-fill-column 120)
 
 ;;================================
 ;;代码折叠
@@ -252,20 +263,20 @@
 ;;========================================
 ;;margin
 ;;========================================
-;; (require 'fill-column-indicator)
-;; (setq-default fci-rule-column 80)
-;; (setq fci-handle-truncate-lines nil)
-;; (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
-;; (global-fci-mode 1)
+(require 'fill-column-indicator)
+(setq-default fci-rule-column 80)
+(setq fci-handle-truncate-lines nil)
+(define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
+(global-fci-mode 1)
 
-;; (defun auto-fci-mode (&optional unused)
-;;   (if (> (window-width) fci-rule-column)
-;;       (fci-mode 1)
-;;     (fci-mode 0))
-;; )
+(defun auto-fci-mode (&optional unused)
+  (if (> (window-width) fci-rule-column)
+      (fci-mode 1)
+    (fci-mode 0))
+)
 
-;; (add-hook 'after-change-major-mode-hook 'auto-fci-mode)
-;; (add-hook 'window-configuration-change-hook 'auto-fci-mode)
+(add-hook 'after-change-major-mode-hook 'auto-fci-mode)
+(add-hook 'window-configuration-change-hook 'auto-fci-mode)
 
 ;;==================================================
 ;;change buffer
