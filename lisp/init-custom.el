@@ -33,8 +33,9 @@
 
   (cond ((memq system-type '(darwin))
 	       (progn
-	        (setq ns-auto-hide-menu-bar t)
-	        (set-frame-parameter nil 'fullscreen 'fullboth)))
+             (setq ns-auto-hide-menu-bar t)
+             (setq ns-pop-up-frames nil) ;; 打开的窗口使用已经打开的
+             (set-frame-parameter nil 'fullscreen 'fullboth)))
         ((memq system-type '(gnu/linux))
 	       (progn
 	        (my-linux-font)
@@ -264,7 +265,7 @@
 ;;margin
 ;;========================================
 (require 'fill-column-indicator)
-(setq-default fci-rule-column 80)
+(setq-default fci-rule-column 120)
 (setq fci-handle-truncate-lines nil)
 (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
 (global-fci-mode 1)

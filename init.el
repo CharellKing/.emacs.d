@@ -10,11 +10,11 @@
 (require 'init-flymake)
 (require 'init-autocomplete)
 (require 'init-c)
-(require 'init-ggtags)
+;;(require 'init-ggtags)
 (require 'init-python)
 (require 'init-protobuf)
 (require 'init-cl)
-
+(require 'init-php)
 ;;(require 'init-xcscope)
 (require 'init-elisp)
 (require 'init-lua-mode)

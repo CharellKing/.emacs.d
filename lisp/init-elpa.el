@@ -103,7 +103,9 @@
 
     ;;web
     web-mode
+    php-mode
     multi-web-mode
+
 
     ;;lisp
     slime
