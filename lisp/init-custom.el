@@ -38,8 +38,8 @@
         ((memq system-type '(gnu/linux))
 	       (progn
 	        (my-linux-font)
-	        (my-maximized) ;;启动emacs时窗口最大化
-	        (global-set-key [f11] 'my-fullscreen))) ;; 启动全屏的快捷键
+	        (my-linux-maximized) ;;启动emacs时窗口最大化
+	        (global-set-key [f11] 'my-linux-fullscreen))) ;; 启动全屏的快捷键
   )
 
   ;;=============================================
