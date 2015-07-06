@@ -51,25 +51,27 @@
     (scroll-bar-mode 0)
     (menu-bar-mode 0)
     (setq frame-title-format "")
-    (setq-default mode-line-format nil)
+    (setq-default mode-line-format (list
+                                    '(:eval (propertize (concat "%e" "-" (format "%s" buffer-file-coding-system) ":")
+                                   'face 'mode-line-face/encoding-writable-modified))))
     )
 
   (my-beatiful-ui)
 
 
-(require 'color-theme)
-(color-theme-initialize)
+  (require 'color-theme)
+  (color-theme-initialize)
 
-(defun my:color_theme ()
-  (if (display-graphic-p)
+  (defun my:color_theme ()
+    (if (display-graphic-p)
+        (color-theme-molokai)
       (color-theme-molokai)
-    (color-theme-molokai)
-    ;; (color-theme-hober)
-    ))
+      ;; (color-theme-hober)
+      ))
 
-(my:color_theme)
-;; (add-hook 'after-make-frame-functions
-;; 	    (my:color_theme))
+  (my:color_theme)
+  ;; (add-hook 'after-make-frame-functions
+  ;; 	    (my:color_theme))
 
 )
 
@@ -102,6 +104,22 @@
 (setq display-time-24hr-format t);;时间使用24小时制
 (setq display-time-day-and-date t);;时间显示包括日期和时间
 (setq display-time-format "%m月%d日 %H:%M %A")
+
+
+;;============================================
+;;
+;;============================================
+(setq-default mode-line-format
+              (list
+               '(:eval (propertize (concat "%e"
+                                           "-"
+                                        ;mode-line-mule-info, use more readable format
+                                           (format "%s" buffer-file-coding-system)
+                                           ":")
+                                   'face 'mode-line-face/encoding-writable-modified))
+               global-mode-string
+                                        ;("[" default-directory "]")
+               "-%-" ))
 
 ;;============================================
 ;;备份
@@ -144,6 +162,12 @@
 (set-face-background 'highlight-indentation-current-column-face "medium aquamarine")
 (setq highlight-indentation-offset 4)
 
+
+;;=================================================
+;;MAC光标滞
+;;=================================================
+(setq git-lock-defer-on-scrolling t)
+(setq font-lock-support-mode 'jit-lock-mode)
 
 ;;=================================================
 ;;auto indent in region
@@ -197,6 +221,10 @@
 ;;=============================
 (prefer-coding-system 'utf-8)
 (setq default-buffer-file-coding-system 'utf-8)
+
+(set-language-environment "Chinese-GB")
+(set-keyboard-coding-system 'chinese-iso-8bit)
+
 ;; (setq coding-system-for-read 'utf-8)
 ;;(setq coding-system-for-write 'utf-8)
 
@@ -306,6 +334,7 @@
 (setq highlight-current-line-high-faces nil)
 (setq highlight-current-line-whole-line nil)
 (setq hl-line-face (quote highlight))
+
 
 ;;============================================
 ;; default split windows in horizon
