@@ -221,12 +221,12 @@
 ;;=============================
 (prefer-coding-system 'utf-8)
 (setq default-buffer-file-coding-system 'utf-8)
+(setq coding-system-for-read 'utf-8)
+(setq coding-system-for-write 'utf-8)
 
-(set-language-environment "Chinese-GB")
-(set-keyboard-coding-system 'chinese-iso-8bit)
+;; (set-language-environment "Chinese-GB")
+;; (set-keyboard-coding-system 'chinese-iso-8bit)
 
-;; (setq coding-system-for-read 'utf-8)
-;;(setq coding-system-for-write 'utf-8)
 
 ;;================================
 ;;设置交互
