@@ -60,4 +60,6 @@
 (add-hook 'python-mode-hook (lambda() (hs-minor-mode 1)))
 
 
+(add-hook 'python-mode-hook 'anaconda-mode)
+
 (provide 'init-python)

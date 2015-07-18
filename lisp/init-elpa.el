@@ -72,6 +72,7 @@
     python-pylint
     python-pep8
     ipython
+    anaconda-mode
 
     ;;latex
     auctex
