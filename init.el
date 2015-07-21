@@ -23,6 +23,7 @@
 (require 'init-latex)
 (require 'init-markdown)
 (require 'init-predictive)
+(require 'init-vlf)
 ;;(require 'init-js)
 (require 'init-template)
 

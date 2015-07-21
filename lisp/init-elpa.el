@@ -108,6 +108,9 @@
     multi-web-mode
 
 
+    ;;large file
+    vlf
+
     ;;lisp
     slime
     ))
