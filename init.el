@@ -6,9 +6,11 @@
 (require 'init-yasnippet)
 (require 'init-helm)
 (require 'init-ido)
-(require 'init-parens)
+(require 'init-autopair)
+;; (require 'init-parens)
 (require 'init-window-numbering)
 (require 'init-shortcut)
+
 
 ;;ide
 (require 'init-web)
@@ -18,5 +20,5 @@
 (require 'init-custom)
 (require 'init-c)
 (require 'init-markdown)
-	 
+
 (provide 'init)

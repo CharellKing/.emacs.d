@@ -19,7 +19,9 @@
     ibuffer
     magit
     psvn
-
+    
+    autopair
+    paredit
     markdown-mode
     js2-mode
     json-mode
