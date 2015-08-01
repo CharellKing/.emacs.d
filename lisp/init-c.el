@@ -1,61 +1,58 @@
-(require 'company)
-(require 'cedet)
-(require 'cc-mode)
-(require 'semantic)
-(require 'function-args)
-(require 'clean-aindent-mode)
-(require 'dtrt-indent)
-(require 'ws-butler)
+(require 'cpputils-cmake)
+	  
+(add-hook 'c-mode-common-hook
+	  (lambda ()
+	    (if (derived-mode-p 'c-mode 'c++-mode)
+		(cppcm-reload-all)
+	      )))
+;; OPTIONAL, somebody reported that they can use this package with Fortran
+(add-hook 'c90-mode-hook (lambda () (cppcm-reload-all)))
+;; OPTIONAL, avoid typing full path when starting gdb
+(global-set-key (kbd "C-c C-g")
+		'(lambda ()(interactive) (gud-gdb (concat "gdb --fullname " (cppcm-get-exe-path-current-buffer)))))
+;; OPTIONAL, some users need specify extra flags forwarded to compiler
+(setq cppcm-extra-preprocss-flags-from-user '("-I/usr/src/linux/include" "-DNDEBUG"))
 
 
-(add-hook 'after-init-hook 'global-company-mode)
 
-(global-semanticdb-minor-mode 1)
-(global-semantic-idle-scheduler-mode 1)
-(semantic-mode 1)
-
-(fa-config-default)
-;; (define-key c-mode-map  [(contrl tab)] 'moo-complete)
-;; ;;(define-key c++-mode-map  [(control tab)] 'moo-complete)
-;; (define-key c-mode-map (kbd "M-o")  'fa-show)
-;; ;;(define-key c++-mode-map (kbd "M-o")  'fa-show)
-
-(add-to-list 'company-backends 'company-c-headers)
-
-(global-semantic-stickyfunc-mode 1)
-
-(global-set-key (kbd "RET") 'newline-and-indent)  ; automatically indent when press RET
-
-(add-hook 'pro-mode-hook 'clean-aindent-mode)
-
-(dtrt-indent-mode 1)
-
-(add-hook 'c-mode-common-hook 'ws-butler-mode)
-
-(global-set-key (kbd "<f5>") (lambda ()
-                               (interactive)
-                               (setq-local compilation-read-command nil)
-                               (call-interactively 'compile)))
-
-(setq gdb-many-windows t
-      gdb-show-main t
-      )
+(add-hook 'c-mode-common-hook
+	  (lambda ()
+	    (if (derived-mode-p 'c-mode 'c++-mode)
+		(if  (not (or (string-match "^/usr/local/include/.*" buffer-file-name)
+			      (string-match "^/usr/src/linux/include/.*" buffer-file-name)))
+		    (cppcm-reload-all))
+	      )))
 
 
-(defun my-c-mode-common-hook ()
-  ;; my customizations for all of c-mode, c++-mode, objc-mode, java-mode
-  (c-set-offset 'substatement-open 0)
-  ;; other customizations can go here
+(setq cppcm-get-executable-full-path-callback
+      (lambda (path type tgt-name)
+	;; path is the supposed-to-be target's full path
+	;; type is either add_executabe or add_library
+	;; tgt-name is the target to built. The target's file extension is stripped
+	(message "cppcm-get-executable-full-path-callback called => %s %s %s" path type tgt-name)
+	(let ((dir (file-name-directory path))
+	      (file (file-name-nondirectory path)))
+	  (cond
+	   ((string= type "add_executable")
+	    (setq path (concat dir "bin/" file)))
+	   ;; for add_library
+	   (t (setq path (concat dir "lib/" file)))
+	   ))
+	;; return the new path
+	(message "cppcm-get-executable-full-path-callback called => path=%s" path)
+	path))
 
-  (setq c++-tab-always-indent t)
-  (setq c-basic-offset 4)                  ;; Default is 2
-  (setq c-indent-level 4)                  ;; Default is 2
+(setq cppcm-write-flymake-makefile nil)
 
-  (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
-  (setq tab-width 4)
-  (setq indent-tabs-mode t)  ; use spaces only if nil
-  )
 
-(add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+(add-hook 'php-mode-hook (lambda() (company-mode)))
+(add-hook 'js-mode (lambda() (company-mode)))
+(add-hook 'python-mode (lambda() (company-mode)))
+(add-hook 'json-mode (lambda() (company-mode)))
+(add-hook 'web-mode (lambda() (company-mode)))
+(add-hook 'protobuf-mode (lambda() (company-mode)))
+(add-hook 'emacs-lisp-mode (lambda() (company-mode)))
+(add-hook 'markdown-mode (lambda() (company-mode)))
+
 
 (provide 'init-c)
