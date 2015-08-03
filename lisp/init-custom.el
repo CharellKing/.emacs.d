@@ -16,5 +16,8 @@
 (setq interprogram-paste-function 'copy-from-osx)
 
 
+;;highlight-indent
+(require 'highlight-indentation)
+
 
 (provide 'init-custom)

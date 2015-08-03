@@ -17,6 +17,7 @@
     smartparens
     window-numbering
     ibuffer
+    highlight-indentation
     magit
     psvn
     
