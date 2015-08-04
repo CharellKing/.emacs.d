@@ -2,7 +2,8 @@
 ;;auto save
 (desktop-save-mode 1)
 
-;;paste on mac
+
+;; 设定mac的剪切板
 (defun copy-from-osx ()
   (shell-command-to-string "pbpaste"))
 
@@ -12,8 +13,24 @@
       (process-send-string proc text)
       (process-send-eof proc))))
 
-(setq interprogram-cut-function 'paste-to-osx)
-(setq interprogram-paste-function 'copy-from-osx)
+
+(cond ((memq system-type '(darwin))
+       (progn
+	 (setq interprogram-cut-function 'paste-to-osx)
+	 (setq interprogram-paste-function 'copy-from-osx))))
+
+
+;;字符集
+(set-language-environment 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-clipboard-coding-system 'euc-cn)
+(set-terminal-coding-system 'utf-8)
+(set-buffer-file-coding-system 'euc-cn)
+(set-selection-coding-system 'euc-cn)
+(modify-coding-system-alist 'process "*" 'utf-8)
+(setq default-process-coding-system
+      '(euc-cn . euc-cn))
+(setq-default pathname-coding-system 'utf-8)
 
 
 ;;highlight-indent

@@ -42,5 +42,12 @@
 	      (push '(?` . ?')
 		    (getf autopair-extra-pairs :string))))
 
+(add-hook 'python-mode-hook
+	  #'(lambda ()
+	      (push '(?` . ?')
+		    (getf autopair-extra-pairs :comment))
+	      (push '(?` . ?')
+		    (getf autopair-extra-pairs :string))))
+
 (provide 'init-autopair)
 
