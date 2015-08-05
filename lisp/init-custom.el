@@ -21,7 +21,6 @@
 
 
 ;;字符集
-(set-language-environment "utf-8")
 (set-language-environment 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (set-clipboard-coding-system 'euc-cn)
