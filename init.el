@@ -7,7 +7,6 @@
 (require 'init-helm)
 (require 'init-ido)
 (require 'init-autopair)
-;; (require 'init-parens)
 (require 'init-window-numbering)
 (require 'init-shortcut)
 
@@ -20,5 +19,7 @@
 (require 'init-custom)
 (require 'init-c)
 (require 'init-markdown)
+(require 'init-template)
+
 
 (provide 'init)

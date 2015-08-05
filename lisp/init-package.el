@@ -20,6 +20,7 @@
     highlight-indentation
     magit
     psvn
+    package
     vlf
     
     autopair
