@@ -45,14 +45,16 @@
 (setq cppcm-write-flymake-makefile nil)
 
 
-(add-hook 'php-mode-hook (lambda() (company-mode)))
-(add-hook 'js-mode (lambda() (company-mode)))
-(add-hook 'python-mode (lambda() (company-mode)))
-(add-hook 'json-mode (lambda() (company-mode)))
-(add-hook 'web-mode (lambda() (company-mode)))
-(add-hook 'protobuf-mode (lambda() (company-mode)))
-(add-hook 'emacs-lisp-mode (lambda() (company-mode)))
-(add-hook 'markdown-mode (lambda() (company-mode)))
 
+
+;; (add-hook 'after-init-hook 'global-company-mode)
+;; (add-hook 'php-mode-hook (lambda() (company-mode)))
+;; (add-hook 'js-mode (lambda() (company-mode)))
+;; (add-hook 'python-mode (lambda() (company-mode)))
+;; (add-hook 'json-mode (lambda() (company-mode)))
+;; (add-hook 'web-mode (lambda() (company-mode)))
+;; (add-hook 'protobuf-mode (lambda() (company-mode)))
+;; (add-hook 'emacs-lisp-mode (lambda() (company-mode)))
+;; (add-hook 'markdown-mode (lambda() (company-mode)))
 
 (provide 'init-c)

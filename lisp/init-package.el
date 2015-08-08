@@ -23,6 +23,14 @@
     package
     vlf
     
+
+    company
+    company-web
+    company-jedi
+    slime-company
+
+
+ 
     autopair
     paredit
     markdown-mode

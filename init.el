@@ -10,8 +10,7 @@
 (require 'init-window-numbering)
 (require 'init-shortcut)
 
-
-;;ide
+;; ide
 (require 'init-web)
 (require 'init-python)
 (require 'init-protobuf)
@@ -21,5 +20,6 @@
 (require 'init-markdown)
 (require 'init-template)
 
+(require 'init-company)
 
 (provide 'init)
