@@ -9,13 +9,13 @@
 (require 'init-autopair)
 (require 'init-window-numbering)
 (require 'init-shortcut)
+(require 'init-custom)
 
 ;; ide
 (require 'init-web)
 (require 'init-python)
 (require 'init-protobuf)
 (require 'init-php)
-(require 'init-custom)
 (require 'init-c)
 (require 'init-markdown)
 (require 'init-template)

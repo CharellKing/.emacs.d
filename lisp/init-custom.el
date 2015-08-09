@@ -21,16 +21,12 @@
 
 
 ;;字符集
-(set-language-environment 'utf-8)
-(set-keyboard-coding-system 'utf-8)
-(set-clipboard-coding-system 'euc-cn)
 (set-terminal-coding-system 'utf-8)
-(set-buffer-file-coding-system 'euc-cn)
-(set-selection-coding-system 'euc-cn)
-(modify-coding-system-alist 'process "*" 'utf-8)
-(setq default-process-coding-system
-      '(euc-cn . euc-cn))
-(setq-default pathname-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-clipboard-coding-system 'utf-8)
+(setenv "LANG" "en_US.UTF-8")
+
 
 
 ;;缩进高亮
@@ -53,5 +49,12 @@
                                 'my-mode-line-coding-format
                                 'mode-line-mule-info
                                 mode-line-format))
+
+
+;;shell utf-8
+
+(defadvice shell (before advice-utf-shell activate)
+  (set-default-coding-systems 'utf-8))
+(ad-activate 'shell)
 
 (provide 'init-custom)
