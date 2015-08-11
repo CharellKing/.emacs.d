@@ -1,6 +1,6 @@
 (require 'package)
 
-(setq package-archives '(("melpa" . "http://melpa.milkbox.net/packages/")
+(setq package-archives '(("marmalade" . "http://marmalade-repo.org/packages/")
 			 ("gnu" . "http://elpa.gnu.org/packages/")
 			 ("org" . "http://orgmode.org/elpa/")))
 
@@ -31,7 +31,6 @@
 
 
  
-    autopair
     paredit
     markdown-mode
     js2-mode

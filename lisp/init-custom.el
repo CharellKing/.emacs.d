@@ -27,6 +27,9 @@
 (set-clipboard-coding-system 'utf-8)
 (setenv "LANG" "en_US.UTF-8")
 
+(defadvice shell (before advice-utf-shell activate)
+  (set-default-coding-systems 'utf-8))
+(ad-activate 'shell)
 
 
 ;;缩进高亮
@@ -51,10 +54,9 @@
                                 mode-line-format))
 
 
-;;shell utf-8
+;; delete trailing white space
+(add-hook 'before-save-hook
+          'delete-trailing-whitespace)
 
-(defadvice shell (before advice-utf-shell activate)
-  (set-default-coding-systems 'utf-8))
-(ad-activate 'shell)
 
 (provide 'init-custom)

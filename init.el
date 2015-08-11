@@ -6,10 +6,10 @@
 (require 'init-yasnippet)
 (require 'init-helm)
 (require 'init-ido)
-(require 'init-autopair)
 (require 'init-window-numbering)
 (require 'init-shortcut)
 (require 'init-custom)
+(require 'init-paredit)
 
 ;; ide
 (require 'init-web)
