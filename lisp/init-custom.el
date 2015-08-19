@@ -60,5 +60,11 @@
 (add-hook 'before-save-hook
           'delete-trailing-whitespace)
 
+;;括号自动完成
+(electric-pair-mode 1)
+(setq electric-pair-pairs '(
+                            (?\" . ?\")
+                            (?\{ . ?\})
+                            ) )
 
 (provide 'init-custom)

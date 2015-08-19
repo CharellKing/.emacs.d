@@ -22,15 +22,15 @@
     psvn
     package
     vlf
-    
+
 
     company
     company-web
     company-jedi
     slime-company
+    flymake-shell
 
 
- 
     paredit
     markdown-mode
     js2-mode
@@ -41,7 +41,7 @@
     php-mode
     elpy
     cpputils-cmake
-    
+
     ))
 
 (defun has-package-not-installed ()

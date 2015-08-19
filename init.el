@@ -19,7 +19,7 @@
 (require 'init-c)
 (require 'init-markdown)
 (require 'init-template)
-
+(require 'init-sh)
 (require 'init-company)
 
 (provide 'init)
