@@ -1,5 +1,10 @@
-
 ;;auto save
+(load "desktop")
+(require 'desktop)
+(setq desktop-load-locked-desktop t)
+(setq default-directory "~/")
+(setq desktop-dirname "~/")
+(setq desktop-base-file-name ".emacs-desktop")
 (desktop-save-mode 1)
 
 ;;tab to space

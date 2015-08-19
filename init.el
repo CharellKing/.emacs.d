@@ -1,6 +1,6 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
 
-;;base
+;;Base
 (require 'init-package)
 (require 'init-smex)
 (require 'init-yasnippet)
@@ -11,7 +11,7 @@
 (require 'init-custom)
 (require 'init-paredit)
 
-;; ide
+;; IDE
 (require 'init-web)
 (require 'init-python)
 (require 'init-protobuf)
