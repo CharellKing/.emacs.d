@@ -2,6 +2,8 @@
 ;;auto save
 (desktop-save-mode 1)
 
+;;tab to space
+(setq-default indent-tabs-mode nil)
 
 ;; 设定mac的剪切板
 (defun copy-from-osx ()
