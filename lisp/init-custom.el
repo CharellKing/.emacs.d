@@ -1,4 +1,4 @@
-;;auto save
+;; auto save
 (load "desktop")
 (require 'desktop)
 (setq desktop-load-locked-desktop t)
@@ -7,7 +7,7 @@
 (setq desktop-base-file-name ".emacs-desktop")
 (desktop-save-mode 1)
 
-;;tab to space
+;; tab to space
 (setq-default indent-tabs-mode nil)
 
 ;; 设定mac的剪切板
@@ -27,7 +27,7 @@
 	 (setq interprogram-paste-function 'copy-from-osx))))
 
 
-;;字符集
+;; 字符集
 (set-terminal-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
@@ -39,7 +39,7 @@
 (ad-activate 'shell)
 
 
-;;缩进高亮
+;; 缩进高亮
 (require 'highlight-indentation)
 (set-face-background 'highlight-indentation-face "#e3e3d3")
 (set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
@@ -61,11 +61,11 @@
                                 mode-line-format))
 
 
-;; delete trailing white space
+;; 删除行尾空格
 (add-hook 'before-save-hook
           'delete-trailing-whitespace)
 
-;;括号自动完成
+;; 括号自动完成
 (electric-pair-mode 1)
 (setq electric-pair-pairs '(
                             (?\" . ?\")

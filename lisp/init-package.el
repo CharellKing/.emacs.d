@@ -22,6 +22,7 @@
     psvn
     package
     vlf
+    goto-chg
 
 
     company
