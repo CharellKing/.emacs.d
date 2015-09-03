@@ -6,8 +6,8 @@
 (define-key global-map (kbd "C-c o") 'iedit-mode)
 
 
-;; (defadvice flymake-post-syntax-check (before flymake-force-check-was-interrupted)
-;;   (setq flymake-check-was-interrupted t))
-;; (ad-activate 'flymake-post-syntax-check)
+(defadvice flymake-post-syntax-check (before flymake-force-check-was-interrupted)
+  (setq flymake-check-was-interrupted t))
+(ad-activate 'flymake-post-syntax-check)
 
 (provide 'init-python)
