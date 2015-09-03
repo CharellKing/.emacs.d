@@ -6,6 +6,7 @@ DATE=""
 
 function usage() {
     echo "-d 日期"
+    echo "-h 帮助"
     (>>>POINT<<<)
 }
 
