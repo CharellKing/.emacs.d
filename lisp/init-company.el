@@ -6,10 +6,10 @@
 
 (add-hook 'after-init-hook 'global-company-mode)
 
-(setq company-tooltip-limit 20)                      
-(setq company-tooltip-align-annotations 't)          
-(setq company-idle-delay .3)                         
-(setq company-begin-commands '(self-insert-command)) 
+(setq company-tooltip-limit 20)
+(setq company-tooltip-align-annotations 't)
+(setq company-idle-delay .3)
+(setq company-begin-commands '(self-insert-command))
 (global-set-key (kbd "C-c /") 'company-files)
 
 
@@ -18,7 +18,9 @@
 	  (lambda ()
 	    (add-to-list 'company-backends 'company-jedi)))
 
-;;common lisp
+;; common lisp
+(require 'slime)
+(setq inferior-lisp-program "/usr/bin/sbcl")
 (slime-setup '(slime-company))
 
 ;;web
