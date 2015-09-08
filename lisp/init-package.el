@@ -1,6 +1,7 @@
 (require 'package)
 
 (setq package-archives '(("marmalade" . "http://marmalade-repo.org/packages/")
+			 ("melpa" . "http://melpa.org/packages/")
 			 ("gnu" . "http://elpa.gnu.org/packages/")
 			 ("org" . "http://orgmode.org/elpa/")))
 
@@ -23,6 +24,7 @@
     package
     vlf
     goto-chg
+    slime
 
 
     company
