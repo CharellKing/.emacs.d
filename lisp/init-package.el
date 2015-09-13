@@ -25,6 +25,9 @@
     vlf
     goto-chg
     slime
+    emamux
+    hideshow
+
 
 
     company
@@ -32,7 +35,6 @@
     company-jedi
     slime-company
     flymake-shell
-
 
     paredit
     markdown-mode
