@@ -27,8 +27,8 @@
     slime
     emamux
     hideshow
-
-
+    web-beautify
+    weechat
 
     company
     company-web

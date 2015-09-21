@@ -72,4 +72,7 @@
                             (?\{ . ?\})
                             ) )
 
+;; 取消wrap line的\
+(set-display-table-slot standard-display-table 'wrap ?\ )
+
 (provide 'init-custom)
