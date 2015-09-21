@@ -1,0 +1,9 @@
+[MESSAGES CONTROL]
+disable=C0321,W0142
+
+[FORMAT]
+max-line-length=120
+max-module-lines=3000
+
+[BASIC]
+no-docstring-rgx=_.*
