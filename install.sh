@@ -18,7 +18,7 @@ if [ "x${SYSTEM_VERSION}" == "xMAC" ]; then
 fi
 
 if [ "x${SYSTEM_VERSION}" == "xLINUX" ]; then
-    APT_GET="sudo apt-get"
+    APT_GET="sudo apt-get -y "
     PIP_GET="sudo pip"
 fi
 
@@ -27,8 +27,9 @@ fi
 ### emacs依赖软件
 ${APT_GET} install python -y
 ${APT_GET} install git -y
-${PIP_GET} install elpy jedi rope flake8 importmagic ipython -y
+${PIP_GET} install elpy jedi rope flake8 importmagic ipython
 ${APT_GET} install tmux -y
+${APT_GET} install global -y
 
 
 ### 传输工具
