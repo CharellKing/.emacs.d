@@ -23,5 +23,6 @@
 (require 'init-template)
 (require 'init-sh)
 (require 'init-company)
+(require 'init-lisp)
 
 (provide 'init)
