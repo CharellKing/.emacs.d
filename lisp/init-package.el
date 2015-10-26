@@ -40,12 +40,15 @@
     markdown-mode
     js2-mode
     json-mode
+    flymake-jslint
     web-mode
     json-mode
     protobuf-mode
     php-mode
     elpy
     cpputils-cmake
+    ruby-mode
+    nodejs-repl
 
     ))
 

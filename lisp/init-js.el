@@ -3,4 +3,7 @@
 (require 'js2-mode)
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 
+(require 'flymake-jslint)
+(add-hook 'js-mode-hook 'flymake-jslint-load)
+
 (provide 'init-js)
