@@ -14,7 +14,7 @@ fi
 
 if [ "x${SYSTEM_VERSION}" == "xMAC" ]; then
     APT_GET="brew"
-    PIP_GET="sudo pip"
+    PIP_GET="pip"
 fi
 
 if [ "x${SYSTEM_VERSION}" == "xLINUX" ]; then
@@ -25,15 +25,15 @@ fi
 ## 安装软件
 
 ### emacs依赖软件
-${APT_GET} install python -y
-${APT_GET} install git -y
-${PIP_GET} install elpy jedi rope flake8 importmagic ipython
-${APT_GET} install tmux -y
-${APT_GET} install global -y
-
+${APT_GET} install python
+${APT_GET} install git
+${PIP_GET} install elpy jedi rope flake8 importmagic ipython, jslint
+${APT_GET} install tmux
+${APT_GET} install global
+npm install jslint -g
 
 ### 传输工具
-${APT_GET} install lftp -y
+${APT_GET} install lftp
 
 
 ## 配置文件

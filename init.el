@@ -11,7 +11,6 @@
 (require 'init-custom)
 (require 'init-paredit)
 (require 'init-fold)
-(require 'init-discover)
 
 ;; IDE
 (require 'init-web)
@@ -24,5 +23,6 @@
 (require 'init-sh)
 (require 'init-company)
 (require 'init-lisp)
+(require 'init-js)
 
 (provide 'init)

@@ -1,10 +1,10 @@
 (require 'package)
 
 (setq package-archives '(("marmalade" . "http://marmalade-repo.org/packages/")
-			 ("melpa" . "http://melpa.org/packages/")
+      			 ("melpa" . "https://melpa.org/packages/")
 			 ("gnu" . "http://elpa.gnu.org/packages/")
+                         ("melpa-stable" . "https://stable.melpa.org/packages/")
 			 ("org" . "http://orgmode.org/elpa/")))
-
 
 (package-initialize)
 
@@ -29,6 +29,7 @@
     hideshow
     web-beautify
     weechat
+    vimish-fold
 
     company
     company-web
