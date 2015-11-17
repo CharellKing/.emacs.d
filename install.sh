@@ -27,7 +27,7 @@ fi
 ### emacs依赖软件
 ${APT_GET} install python
 ${APT_GET} install git
-${PIP_GET} install elpy jedi rope flake8 importmagic ipython, jslint
+${PIP_GET} install elpy jedi rope flake8 importmagic ipython jslint
 ${APT_GET} install tmux
 ${APT_GET} install global
 npm install jslint -g
