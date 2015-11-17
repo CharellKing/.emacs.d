@@ -1,0 +1,9 @@
+deb http://mirrors.aliyun.com/kali kali main non-free contrib
+
+deb-src http://mirrors.aliyun.com/kali kali main non-free contrib
+
+deb http://mirrors.aliyun.com/kali-security kali/updates main contrib non-free
+
+
+deb http://ppa.launchpad.net/yannubuntu/boot-repair/ubuntu precise main 
+deb-src http://ppa.launchpad.net/yannubuntu/boot-repair/ubuntu precise main
