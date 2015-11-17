@@ -12,3 +12,5 @@ fi
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.`date +%s`
 sudo cp ${CUR_DIR}/kali_conf/sources.list /etc/apt/sources.list
 ${APT_GET} update
+
+${APT_GET} install boot-repair
