@@ -25,13 +25,15 @@ elif [ "x${SYSTEM_TYPE}" == "xlinux" ]; then
     SYSTEM_INFO=`cat /etc/issue | tr 'A-Z' 'a-z'`
 
     SYSTEM_APT_GETS=("redhat rpm" "fedora rpm" "centos rpm" "debian apt-get" "ubuntu apt-get" "kali apt-get" "mint apt-get")
-
-    for SYSTEM_APT_GET in ${SYSTEM_APT_GETS[@]}
+    
+    for ((i=0;i<${#SYSTEM_APT_GETS[@]};i++))
     do
-        SYSTEM_APT_GET=(${SYSTEM_APT_GET})
-        if `echo ${SYSTEM_INFO} | grep -q  ${SYSTEM_APT_GET[0]}`; then
-            SYSTEM_TYPE="${SYSTEM_APT_GET[0]}"
-            APT_GET="sudo ${SYSTEM_APT_GET[1]} -y"
+        SYSTEM_APT_GET=(${SYSTEM_APT_GETS[$i]})
+        SYSTEM_TYPE=${SYSTEM_APT_GET[0]}
+        APT_GET=${SYSTEM_APT_GET[1]}
+
+        if `echo ${SYSTEM_INFO} | grep -q  ${SYSTEM_TYPE}`; then
+            APT_GET="sudo ${APT_GET} -y"
             break
         fi
     done

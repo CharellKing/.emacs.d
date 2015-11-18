@@ -14,3 +14,5 @@ sudo cp ${CUR_DIR}/kali_conf/sources.list /etc/apt/sources.list
 ${APT_GET} update
 
 ${APT_GET} install boot-repair
+
+${APT_GET} install network-manager-openvpn-gnome network-manager-pptp network-manager-pptp-gnome network-manager-strongswan network-manager-vpnc network-manager-vpnc-gnome

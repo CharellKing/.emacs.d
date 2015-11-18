@@ -1,9 +1,22 @@
-deb http://mirrors.aliyun.com/kali kali main non-free contrib
+deb http://mirrors.aliyun.com/kali sana main non-free contrib
 
-deb-src http://mirrors.aliyun.com/kali kali main non-free contrib
+deb http://mirrors.aliyun.com/kali-security/ sana/updates main contrib non-free
 
-deb http://mirrors.aliyun.com/kali-security kali/updates main contrib non-free
-
+deb-src http://mirrors.aliyun.com/kali-security/ sana/updates main contrib non-free
 
 deb http://ppa.launchpad.net/yannubuntu/boot-repair/ubuntu precise main 
 deb-src http://ppa.launchpad.net/yannubuntu/boot-repair/ubuntu precise main
+
+
+deb http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu trusty main 
+deb-src http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu trusty main
+
+# deb http://http.kali.org/kali sana main non-free contrib
+# deb http://security.kali.org/kali-security/ sana/updates main contrib non-free
+
+
+# Line commented out by installer because it failed to verify:
+#deb http://security.kali.org/kali-security/ sana/updates main contrib non-free
+# Line commented out by installer because it failed to verify:
+#deb-src http://security.kali.org/kali-security/ sana/updates main contrib non-free
+
