@@ -11,6 +11,7 @@
 (require 'init-custom)
 (require 'init-paredit)
 (require 'init-fold)
+(require 'init-projectile)
 
 ;; IDE
 (require 'init-web)

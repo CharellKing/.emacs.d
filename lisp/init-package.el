@@ -1,7 +1,6 @@
 (require 'package)
 
 (setq package-archives '(("marmalade" . "http://marmalade-repo.org/packages/")
-      			 ("melpa" . "https://melpa.org/packages/")
 			 ("gnu" . "http://elpa.gnu.org/packages/")
                          ("melpa-stable" . "https://stable.melpa.org/packages/")
 			 ("org" . "http://orgmode.org/elpa/")))
@@ -30,6 +29,8 @@
     web-beautify
     weechat
     vimish-fold
+    projectile
+    flx-ido
 
     company
     company-web
