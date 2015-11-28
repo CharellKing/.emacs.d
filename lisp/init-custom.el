@@ -80,7 +80,17 @@
 (require 'fill-column-indicator)
 (setq fci-rule-width 1)
 (setq-default fci-rule-column 120)
+
+
 (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
 (global-fci-mode 1)
+
+
+;; 函数提示
+(add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'python-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'js-mode-hook 'turn-on-eldoc-mode)
 
 (provide 'init-custom)

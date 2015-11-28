@@ -1,7 +1,6 @@
 
 (defvar code-editing-mode-hooks '(c-mode-common-hook
                                   clojure-mode-hook
-                                  emacs-lisp-mode-hook
                                   java-mode-hook
                                   lisp-mode-hook
                                   emacs-lisp-mode-hook
