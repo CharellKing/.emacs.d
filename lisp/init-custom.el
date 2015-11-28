@@ -82,15 +82,24 @@
 (setq-default fci-rule-column 120)
 
 
-(define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
-(global-fci-mode 1)
+(defvar code-editing-mode-hooks '(c-mode-common-hook
+                                  clojure-mode-hook
+                                  java-mode-hook
+                                  lisp-mode-hook
+                                  emacs-lisp-mode-hook
+                                  php-mode-hook
+                                  web-mode-hook
+                                  perl-mode-hook
+                                  python-mode-hook
+                                  sh-mode-hook))
 
 
-;; 函数提示
-(add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
-(add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
-(add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
-(add-hook 'python-mode-hook 'turn-on-eldoc-mode)
-(add-hook 'js-mode-hook 'turn-on-eldoc-mode)
+(dolist (mode code-editing-mode-hooks)
+  (add-hook mode 'fci-mode))
+
+
+
+
+
 
 (provide 'init-custom)
