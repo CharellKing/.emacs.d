@@ -31,6 +31,7 @@
     vimish-fold
     projectile
     flx-ido
+    fill-column-indicator
 
     company
     company-web

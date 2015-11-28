@@ -75,4 +75,12 @@
 ;; 取消wrap line的\
 (set-display-table-slot standard-display-table 'wrap ?\ )
 
+
+;; 列显示
+(require 'fill-column-indicator)
+(setq fci-rule-width 1)
+(setq-default fci-rule-column 120)
+(define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
+(global-fci-mode 1)
+
 (provide 'init-custom)
