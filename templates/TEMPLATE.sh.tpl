@@ -22,4 +22,5 @@ done
 
 if [[ "x" == "x$DATE" ]]; then
     usage
+    exit 1
 fi
