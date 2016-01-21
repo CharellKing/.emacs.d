@@ -6,6 +6,7 @@ import sys
 
 
 def main():
+    pass
 (>>>POINT<<<)
 
 if __name__ == "__main__":
