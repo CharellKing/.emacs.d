@@ -5,7 +5,7 @@ CUR_DIR=$(cd "$(dirname "$0")"; pwd)
 source ${CUR_DIR}/system.sh
 
 ## 安装软件
-${APT_GET} install python git npm tmux global emacs keepassx
+${APT_GET} install python git npm tmux global emacs keepassx sbcl xclip slime
 
 ## 安装pip插件
 ${PIP_GET} install elpy jedi rope flake8 importmagic ipython jslint lftp shadowsocks ipython

@@ -3,6 +3,7 @@
 (setq package-archives '(("marmalade" . "http://marmalade-repo.org/packages/")
 			 ("gnu" . "http://elpa.gnu.org/packages/")
                          ("melpa-stable" . "https://stable.melpa.org/packages/")
+			 ("melpa" . "https://melpa.org/packages/")
 			 ("org" . "http://orgmode.org/elpa/")))
 
 (package-initialize)
@@ -32,6 +33,7 @@
     projectile
     flx-ido
     fill-column-indicator
+    xclip
 
     company
     company-web
