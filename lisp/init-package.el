@@ -34,6 +34,9 @@
     flx-ido
     fill-column-indicator
     xclip
+    elfeed
+    elfeed-org
+    elfeed-goodies
 
     company
     company-web

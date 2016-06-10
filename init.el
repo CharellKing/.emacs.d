@@ -12,6 +12,7 @@
 (require 'init-paredit)
 (require 'init-fold)
 (require 'init-projectile)
+(require 'init-rss)
 
 ;; IDE
 (require 'init-web)
