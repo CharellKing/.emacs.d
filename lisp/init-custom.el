@@ -83,6 +83,10 @@
 (setq fci-rule-width 1)
 (setq-default fci-rule-column 120)
 
+;; toolbar menu
+(tool-bar-mode nil)
+(menu-bar-mode nil)
+(scroll-bar-mode nil)
 
 (defvar code-editing-mode-hooks '(c-mode-common-hook
                                   clojure-mode-hook
