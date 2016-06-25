@@ -84,9 +84,9 @@
 (setq-default fci-rule-column 120)
 
 ;; toolbar menu
-(tool-bar-mode -1)
-(menu-bar-mode -1)
-(scroll-bar-mode -1)
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 
 (defvar code-editing-mode-hooks '(c-mode-common-hook
                                   clojure-mode-hook
