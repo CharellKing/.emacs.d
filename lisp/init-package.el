@@ -32,7 +32,6 @@
     vimish-fold
     projectile
     flx-ido
-    fill-column-indicator
     xclip
     elfeed
     elfeed-org

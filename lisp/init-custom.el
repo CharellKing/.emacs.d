@@ -79,9 +79,9 @@
 
 
 ;; 列显示
-(require 'fill-column-indicator)
-(setq fci-rule-width 1)
-(setq-default fci-rule-column 120)
+;; (require 'fill-column-indicator)
+;; (setq fci-rule-width 1)
+;; (setq-default fci-rule-column 120)
 
 ;; toolbar menu
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
@@ -91,7 +91,7 @@
 (defvar code-editing-mode-hooks '(c-mode-common-hook
                                   clojure-mode-hook
                                   java-mode-hook
-                                  lisp-mode-hook
+init-customee                                  lisp-mode-hook
                                   emacs-lisp-mode-hook
                                   php-mode-hook
                                   web-mode-hook
