@@ -18,10 +18,6 @@
 	  (lambda ()
 	    (add-to-list 'company-backends 'company-jedi)))
 
-;; common lisp
-(require 'slime)
-(setq inferior-lisp-program "/usr/bin/sbcl")
-(slime-setup '(slime-company))
 
 ;;web
 (add-hook 'web-mode-hook (lambda ()
