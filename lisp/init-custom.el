@@ -100,8 +100,10 @@
   (add-hook mode 'fci-mode))
 
 
+(require 'powerline)
+(powerline-default-theme)
 
-
-
+(require 'popwin)
+(popwin-mode 1)
 
 (provide 'init-custom)

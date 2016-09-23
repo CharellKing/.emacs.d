@@ -1,12 +1,18 @@
+;; Load elfeed-org
 (require 'elfeed-org)
-
-(elfeed-org)
-
-(setq rmh-elfeed-org-files (list "~/.emacs.d/elfeed.org"))
+(require 'elfeed)
 
 (global-set-key (kbd "C-x w") 'elfeed)
 
-(setf url-queue-timeout 30)
+(elfeed-org)
+
+;; (setq rmh-elfeed-org-files (list "~/.emacs.d/elfeed.org"))
+
+(setq-default elfeed-search-filter "@1-week-ago +unread ")
+
+(add-hook 'elfeed-new-entry-hook
+          (elfeed-make-tagger :before "2 weeks ago"
+                              :remove 'unread))
 
 (defun feed-reader/stats ()
   "Count the number of entries and feeds being currently displayed."
