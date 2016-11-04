@@ -21,8 +21,17 @@
       (process-send-eof proc))))
 
 
+(defun set-exec-path-from-shell-PATH ()
+  (let ((path-from-shell (replace-regexp-in-string
+                          "[ \t\n]*$"
+                          ""
+                          (shell-command-to-string "$SHELL --login -i -c 'echo $PATH'"))))
+    (setenv "PATH" path-from-shell)
+    (setq exec-path (split-string path-from-shell path-separator))))
+
 (cond ((memq system-type '(darwin))
        (progn
+         (set-exec-path-from-shell-PATH)
 	 (setq interprogram-cut-function 'paste-to-osx)
 	 (setq interprogram-paste-function 'copy-from-osx))))
 
@@ -43,8 +52,17 @@
 
 ;; 缩进高亮
 (require 'highlight-indentation)
-(set-face-background 'highlight-indentation-face "#e3e3d3")
-(set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
+(set-face-background 'highlight-indentation-face "#FFB6C1")
+(set-face-background 'highlight-indentation-current-column-face "#6A5ACD")
+
+
+;; 设置行号
+(defun fix-linum-size ()
+  (interactive)
+  (set-face-attribute 'linum nil :height 140)
+  (set-face-attribute 'linum nil :foreground "yellow"))
+
+(add-hook 'linum-mode-hook 'fix-linum-size)
 
 ;; 在mode line上显示文件字符集
 (defvar my-mode-line-coding-format
@@ -79,9 +97,9 @@
 
 
 ;; 列显示
-(require 'fill-column-indicator)
-(setq fci-rule-width 1)
-(setq-default fci-rule-column 120)
+;; (require 'fill-column-indicator)
+;; (setq fci-rule-width 1)
+;; (setq-default fci-rule-column 120)
 
 ;; toolbar menu
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))

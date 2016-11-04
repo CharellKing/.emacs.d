@@ -1,15 +1,15 @@
 (require 'package)
 
-(setq configuration-layer--elpa-archives
-    '(("melpa-cn" . "http://elpa.zilongshanren.com/melpa/")
-      ("org-cn"   . "http://elpa.zilongshanren.com/org/")
-      ("gnu-cn"   . "http://elpa.zilongshanren.com/gnu/")))
+;; (setq configuration-layer--elpa-archives
+;;     '(("melpa-cn" . "http://elpa.zilongshanren.com/melpa/")
+;;       ("org-cn"   . "http://elpa.zilongshanren.com/org/")
+;;       ("gnu-cn"   . "http://elpa.zilongshanren.com/gnu/")))
 
-;; (setq package-archives '(("marmalade" . "http://marmalade-repo.org/packages/")
-;; 			 ("gnu" . "http://elpa.gnu.org/packages/")
-;;                          ("melpa-stable" . "https://stable.melpa.org/packages/")
-;; 			 ("melpa" . "https://melpa.org/packages/")
-;; 			 ("org" . "http://orgmode.org/elpa/")))
+(setq package-archives '(("marmalade" . "http://marmalade-repo.org/packages/")
+ 			 ("gnu" . "http://elpa.gnu.org/packages/")
+                          ("melpa-stable" . "https://stable.melpa.org/packages/")
+ 			 ("melpa" . "https://melpa.org/packages/")
+ 			 ("org" . "http://orgmode.org/elpa/")))
 
 (package-initialize)
 
@@ -23,7 +23,6 @@
     smartparens
     window-numbering
     ibuffer
-    highlight-indentation
     magit
     psvn
     package
@@ -37,7 +36,8 @@
     vimish-fold
     projectile
     flx-ido
-    fill-column-indicator
+    highlight-indentation
+    ;; fill-column-indicator
     xclip
     elfeed
     elfeed-org
