@@ -1,3 +1,6 @@
+(require 'rhtml-mode)
+(require 'yaml-mode)
+
 (autoload 'ruby-mode "ruby-mode"
   "Mode for editing ruby source files" t)
 (setq auto-mode-alist
@@ -11,5 +14,8 @@
 (add-hook 'ruby-mode-hook
           '(lambda ()
              (inf-ruby-keys)))
+
+(projectile-rails-mode)
+
 
 (provide 'init-ruby)

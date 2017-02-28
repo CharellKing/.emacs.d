@@ -5,11 +5,16 @@
 ;;       ("org-cn"   . "http://elpa.zilongshanren.com/org/")
 ;;       ("gnu-cn"   . "http://elpa.zilongshanren.com/gnu/")))
 
-(setq package-archives '(("marmalade" . "http://marmalade-repo.org/packages/")
- 			 ("gnu" . "http://elpa.gnu.org/packages/")
-                          ("melpa-stable" . "https://stable.melpa.org/packages/")
- 			 ("melpa" . "https://melpa.org/packages/")
- 			 ("org" . "http://orgmode.org/elpa/")))
+(setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
+                         ("marmalade" . "http://elpa.emacs-china.org/marmalade/")
+                         ("org"  .  "http://elpa.emacs-china.org/org/")
+                         ("melpa" . "http://elpa.emacs-china.org/melpa/")))
+
+;; (setq package-archives '(("marmalade" . "http://marmalade-repo.org/packages/")
+;;  			 ("gnu" . "http://elpa.gnu.org/packages/")
+;;                           ("melpa-stable" . "https://stable.melpa.org/packages/")
+;;  			 ("melpa" . "https://melpa.org/packages/")
+;;  			 ("org" . "http://orgmode.org/elpa/")))
 
 (package-initialize)
 
@@ -37,7 +42,7 @@
     projectile
     flx-ido
     highlight-indentation
-    ;; fill-column-indicator
+    fill-column-indicator
     xclip
     elfeed
     elfeed-org
@@ -62,9 +67,12 @@
     php-mode
     elpy
     cpputils-cmake
-    ruby-mode
     nodejs-repl
 
+    rhtml-mode
+    yaml-mode
+    ruby-mode
+    projectile-rails
     ))
 
 (defun has-package-not-installed ()
