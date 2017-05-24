@@ -1,7 +1,7 @@
 (defun my-python-mode-hook ()
   "Hooks for Web mode."
   (elpy-enable)
-
+  (flycheck-mode)
   (elpy-use-ipython)
 
   (define-key yas-minor-mode-map (kbd "C-c k") 'yas-expand)
