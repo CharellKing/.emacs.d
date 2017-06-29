@@ -1,20 +1,13 @@
 (require 'package)
 
-;; (setq configuration-layer--elpa-archives
-;;     '(("melpa-cn" . "http://elpa.zilongshanren.com/melpa/")
-;;       ("org-cn"   . "http://elpa.zilongshanren.com/org/")
-;;       ("gnu-cn"   . "http://elpa.zilongshanren.com/gnu/")))
 
 (setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
-                         ("marmalade" . "http://elpa.emacs-china.org/marmalade/")
-                         ("org"  .  "http://elpa.emacs-china.org/org/")
-                         ("melpa" . "http://elpa.emacs-china.org/melpa/")))
-
-;; (setq package-archives '(("marmalade" . "http://marmalade-repo.org/packages/")
-;;  			 ("gnu" . "http://elpa.gnu.org/packages/")
-;;                           ("melpa-stable" . "https://stable.melpa.org/packages/")
-;;  			 ("melpa" . "https://melpa.org/packages/")
-;;  			 ("org" . "http://orgmode.org/elpa/")))
+			 ("melpa" . "http://elpa.emacs-china.org/melpa/")
+			 ("marmalade" . "http://elpa.emacs-china.org/marmalade/")
+			 ("org" . "http://elpa.emacs-china.org/org/")
+			 ("Sunrise Commander ELPA" . "http://elpa.emacs-china.org/sunrise-commander/")
+			 ("user42 ELPA" . "http://elpa.emacs-china.org/user42/")
+			 ))
 
 (package-initialize)
 

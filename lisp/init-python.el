@@ -1,7 +1,7 @@
 (defun my-python-mode-hook ()
   "Hooks for Web mode."
   (elpy-enable)
-
+  (flycheck-mode)
   (elpy-use-ipython)
 
   (define-key yas-minor-mode-map (kbd "C-c k") 'yas-expand)
@@ -11,6 +11,8 @@
     (setq flymake-check-was-interrupted t))
   (ad-activate 'flymake-post-syntax-check)
 )
+
+
 
 (add-hook 'python-mode-hook  'my-python-mode-hook)
 
