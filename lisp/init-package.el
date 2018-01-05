@@ -61,6 +61,7 @@
     elpy
     cpputils-cmake
     nodejs-repl
+    undo-tree
 
     rhtml-mode
     yaml-mode

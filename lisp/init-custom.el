@@ -32,8 +32,8 @@
 (cond ((memq system-type '(darwin))
        (progn
          (set-exec-path-from-shell-PATH)
-	 (setq interprogram-cut-function 'paste-to-osx)
-	 (setq interprogram-paste-function 'copy-from-osx))))
+         (setq interprogram-cut-function 'paste-to-osx)
+         (setq interprogram-paste-function 'copy-from-osx))))
 
 (cond ((memq system-type '(gnu/linux))
        (progn
@@ -68,11 +68,11 @@
 (defvar my-mode-line-coding-format
   '(:eval
     (let* ((code (symbol-name buffer-file-coding-system))
-	   (eol-type (coding-system-eol-type buffer-file-coding-system))
-	   (eol (if (eq 0 eol-type) "UNIX"
-		  (if (eq 1 eol-type) "DOS"
-		    (if (eq 2 eol-type) "MAC"
-		      "???")))))
+           (eol-type (coding-system-eol-type buffer-file-coding-system))
+           (eol (if (eq 0 eol-type) "UNIX"
+                  (if (eq 1 eol-type) "DOS"
+                    (if (eq 2 eol-type) "MAC"
+                      "???")))))
       (concat code " " eol " "))))
 (put 'my-mode-line-coding-format 'risky-local-variable t)
 (setq-default mode-line-format (substitute
@@ -130,6 +130,23 @@
                                   perl-mode-hook
                                   python-mode-hook
                                   sh-mode-hook))
+
+;; cpp style
+(setq c-default-style "linux"
+      c-basic-offset 4)
+
+;; show function name in head line
+(which-function-mode)
+
+(setq mode-line-format (delete (assoc 'which-func-mode
+                                      mode-line-format) mode-line-format)
+      which-func-header-line-format '(which-func-mode ("" which-func-format)))
+
+(defadvice which-func-ff-hook (after header-line activate)
+  (when which-func-mode
+    (setq mode-line-format (delete (assoc 'which-func-mode
+                                          mode-line-format) mode-line-format)
+          header-line-format which-func-header-line-format)))
 
 
 (dolist (mode code-editing-mode-hooks)
