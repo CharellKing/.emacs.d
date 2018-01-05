@@ -31,7 +31,8 @@
     hideshow
     web-beautify
     weechat
-    vimish-fold
+    ;; vimish-fold
+    origami
     projectile
     flx-ido
     highlight-indentation
@@ -42,6 +43,7 @@
     elfeed-goodies
     powerline
     popwin
+
 
     company
     company-web
