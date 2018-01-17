@@ -31,7 +31,7 @@
     hideshow
     web-beautify
     weechat
-    ;; vimish-fold
+    vimish-fold
     origami
     projectile
     flx-ido
