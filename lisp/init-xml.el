@@ -55,6 +55,8 @@
                                         ; If this isn't enabled, syntax coloring won't take affect until
                                         ; you manually invoke "DTD->Parse DTD"
 (setq sgml-auto-activate-dtd t)
+(setq sgml-set-face t)
+(setq sgml-indent-data t)
 
 ;;; Set up my "DTD->Insert DTD" menu.
 
@@ -106,5 +108,6 @@ Frameset//EN\" \"xhtml1-frameset.dtd\">" )
 (defun my-psgml-hook ()
   (local-set-key "\C-c\C-b" 'browse-url-of-buffer)
   )
+
 
 (add-hook 'sgml-mode-hook 'my-psgml-hook)""))")
