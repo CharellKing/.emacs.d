@@ -68,6 +68,7 @@
     rhtml-mode
     yaml-mode
     ruby-mode
+    psgml
     projectile-rails
     ))
 
