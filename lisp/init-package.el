@@ -69,6 +69,8 @@
     yaml-mode
     ruby-mode
     projectile-rails
+
+    go-mode
     ))
 
 (defun has-package-not-installed ()
