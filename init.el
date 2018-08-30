@@ -33,7 +33,6 @@
 (require 'init-company)
 (require 'init-lisp)
 (require 'init-js)
-
 (provide 'init)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

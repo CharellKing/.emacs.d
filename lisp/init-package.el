@@ -2,12 +2,12 @@
 
 
 (setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
-			 ("melpa" . "http://elpa.emacs-china.org/melpa/")
-			 ("marmalade" . "http://elpa.emacs-china.org/marmalade/")
-			 ("org" . "http://elpa.emacs-china.org/org/")
-			 ("Sunrise Commander ELPA" . "http://elpa.emacs-china.org/sunrise-commander/")
-			 ("user42 ELPA" . "http://elpa.emacs-china.org/user42/")
-			 ))
+                         ("melpa" . "http://elpa.emacs-china.org/melpa/")
+                         ("marmalade" . "http://elpa.emacs-china.org/marmalade/")
+                         ("org" . "http://elpa.emacs-china.org/org/")
+                         ("Sunrise Commander ELPA" . "http://elpa.emacs-china.org/sunrise-commander/")
+                         ("user42 ELPA" . "http://elpa.emacs-china.org/user42/")
+                         ))
 
 (package-initialize)
 
@@ -68,6 +68,7 @@
     rhtml-mode
     yaml-mode
     ruby-mode
+    psgml
     projectile-rails
 
     go-mode
@@ -75,8 +76,8 @@
 
 (defun has-package-not-installed ()
   (loop for p in packages-list
-	when (not (package-installed-p p)) do (return t)
-	finally (return nil)))
+        when (not (package-installed-p p)) do (return t)
+        finally (return nil)))
 
 (when (has-package-not-installed)
   ;; Check for new packages (package versions)
