@@ -15,6 +15,12 @@
 (global-set-key (kbd "C-c {") 'hs-hide-all)
 (global-set-key (kbd "C-c }") 'hs-show-all)
 
+
+;; 修改undo的快捷键
+(global-set-key (kbd "C-/") 'undo)
+
+
+
 ;; 解决Ctrl＋Space的冲突
 (global-unset-key (kbd "C-SPC"))
 (global-set-key (kbd "M-SPC") 'set-mark-command)

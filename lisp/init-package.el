@@ -72,6 +72,7 @@
     projectile-rails
 
     go-mode
+    go-eldoc
     ))
 
 (defun has-package-not-installed ()

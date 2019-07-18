@@ -38,6 +38,7 @@
 (cond ((memq system-type '(gnu/linux))
        (progn
          (xclip-mode 1))))
+
 ;; 字符集
 (set-terminal-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
