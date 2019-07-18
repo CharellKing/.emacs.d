@@ -50,6 +50,7 @@
     company-jedi
     slime-company
     flymake-shell
+    auto-complete
 
     paredit
     markdown-mode

@@ -1,4 +1,7 @@
 
+(require 'go-autocomplete)
+(require 'auto-complete-config)
+(ac-config-default)
 
 (add-hook 'before-save-hook 'gofmt-before-save)
 
