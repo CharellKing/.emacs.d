@@ -1,10 +1,11 @@
 (require 'flx-ido)
-(ido-mode 1)
-(ido-everywhere 1)
-(flx-ido-mode 1)
-(setq ido-enable-flex-matching t)
-(setq ido-use-faces nil)
+;; (ido-mode 1)
+;; (ido-everywhere 1)
+;; (flx-ido-mode 1)
+;; (setq ido-enable-flex-matching t)
+;; (setq ido-use-faces nil)
 
+(setq read-file-name-function 'ido-read-file)
 
 ;; 遇到相似的文件c-j就可以创建要生成的文件
 (global-set-key (kbd "C-x C-f") 'ido-find-file) 
